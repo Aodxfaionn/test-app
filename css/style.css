@@ -1,0 +1,61 @@
+@font-face {
+  font-family: "Onest";
+  src: url("./fonts/Onest-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Onest";
+  src: url("./fonts/Onest-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Onest";
+  src: url("./fonts/Onest-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Onest";
+  src: url("./fonts/Onest-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  background-color: #e8edee;
+  font-size: 22px;
+  line-height: 32px;
+  font-family: "Onest", sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  transition: 0.4s;
+}
+
+a:active,
+a:hover,
+a:focus {
+  outline: 0;
+  outline-offset: 0;
+  box-shadow: none;
+}
+
+.mobileMenu {
+  display: none;
+}/*# sourceMappingURL=style.css.map */

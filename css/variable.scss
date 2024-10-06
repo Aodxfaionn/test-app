@@ -1,0 +1,120 @@
+$font-fontFamily: "Onest", sans-serif;
+$font-h1-fontSize: 80px;
+$font-h2-fontSize: 32px;
+$font-h3-fontSize: 24px;
+$font-button-fontSize: 14px;
+$font-text1-fontSize: 22px;
+$font-text2-fontSize: 18px;
+$font-text3-fontSize: 14px;
+$font-fontWeight-regular: 400;
+$font-fontWeight-medium: 500;
+$font-fontWeight-bold: 700;
+$font-fontWeight-black: 900;
+$font-letterSpacing-minus: -0.04em;
+$font-letterSpacing-plus: 0.04em;
+$font-title-lineHeight-small: 110%;
+$font-title-lineHeight-medium: 120%;
+$font-text-lineHeight-big: 32px;
+$font-text-lineHeight-medium: 22px;
+$font-text-lineHeight-small: 20px;
+$font-text-default: 100%;
+
+$color-text-primary: #1d1d1b;
+$color-text-secondary: #fff;
+$color-text-hover: #ff5900;
+
+$color-background-default: #e8edee;;
+$color-background-dark: #1d1d1b;
+$color-background-orange: #ff5900;
+
+$color-background-button-primary-active: #f2f6f6;
+$color-background-button-primary-hover: #f2f6f6;
+$color-background-button-primary-default: #1d1d1b;
+$color-color-button-primary-active: #a4adac;
+$color-color-button-primary-hover: #1d1d1b;
+$color-color-button-primary-default: #fff;
+
+$color-background-button-secondary-default: #ff5900;
+$color-background-button-secondary-hover: #e0570e;
+$color-background-button-secondary-disabled: #d6dbdb;
+$color-color-button-secondary-default: #fff;
+$color-color-button-secondary-hover: #fff;
+$color-color-button-secondary-disabled: #a4adac;
+
+@mixin h1 {
+  font-weight: $font-fontWeight-bold;
+  font-size: $font-h1-fontSize;
+  letter-spacing: $font-letterSpacing;
+}
+
+@mixin h2 {
+  font-weight: $font-fontWeight-bold;
+  font-size: $font-h1-fontSize;
+  letter-spacing: $font-letterSpacing-minus;
+  line-height: $font-title-lineHeight-small;
+}
+
+@mixin h3 {
+  font-weight: $font-fontWeight-bold;
+  font-size: $font-h1-fontSize;
+  letter-spacing: $font-letterSpacing;
+  line-height: $font-title-lineHeight-medium;
+}
+
+@mixin button {
+  font-weight: $font-fontWeight-medium;
+  font-size: $font-button-fontSize;
+  letter-spacing: $font-letterSpacing-plus;
+}
+
+
+@mixin text1 {
+  font-size: $font-text1-fontSize;
+  line-height: $font-text-lineHeight-big;
+}
+
+@mixin text2 {
+  font-size: $font-text2-fontSize;
+  line-height: $font-text-lineHeight-medium;
+}
+
+@mixin text3 {
+  font-size: $font-text3-fontSize;
+  line-height: $font-text-lineHeight-small;
+}
+
+@mixin btn-black {
+  background: $color-background-button-primary-default;
+  color: $color-color-button-primary-default;
+}
+
+@mixin btn-black-hover {
+  background: $color-background-button-primary-hover;
+  color: $color-color-button-primary-hover;
+}
+
+@mixin btn-black-active {
+  background: $color-background-button-primary-active;
+  color: $color-color-button-primary-active;
+}
+
+@mixin btn-orange {
+  background: $color-background-button-secondary-default;
+  color: $color-color-button-secondary-default;
+}
+
+@mixin btn-black-hover {
+  background: $color-background-button-secondary-hover;
+  color: $color-color-button-secondary-hover;
+}
+
+@mixin btn-black-disabled {
+  background: $color-background-button-secondary-disabled;
+  color: $color-color-button-secondary-disabled;
+}
+
+@mixin input {
+  font-family: $font-fontFamily;
+  font-size: $font-text2-fontSize;
+  line-height: $font-title-lineHeight-medium;
+}
