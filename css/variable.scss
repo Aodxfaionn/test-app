@@ -25,26 +25,33 @@ $color-text-secondary: #fff;
 $color-text-hover: #ff5900;
 
 $color-background-default: #e8edee;
+$color-background-grey: #f2f6f6;
+$color-background-grey-dark: #a4adac;
 $color-background-dark: #1d1d1b;
 $color-background-orange: #ff5900;
+$color-background-white: #fff;
 
 $color-background-button-primary-default: #f2f6f6;
-$color-background-button-primary-hover: #f2f6f6;
+$color-background-button-primary-hover: #a4adac;
 $color-background-button-primary-active: #1d1d1b;
-$color-color-button-primary-default: #a4adac;
-$color-color-button-primary-hover: #1d1d1b;
-$color-color-button-primary-active: #fff;
+$color-button-primary-default: #a4adac;
+$color-button-primary-hover: #fff;
+$color-button-primary-active: #fff;
 
 $color-background-button-secondary-default: #ff5900;
 $color-background-button-secondary-hover: #e0570e;
 $color-background-button-secondary-disabled: #d6dbdb;
-$color-color-button-secondary-default: #fff;
-$color-color-button-secondary-hover: #fff;
-$color-color-button-secondary-disabled: #a4adac;
+$color-button-secondary-default: #fff;
+$color-button-secondary-hover: #fff;
+$color-button-secondary-disabled: #a4adac;
 
 $color-link-primary: #e0570e;
 
-$button-border-radius: 10px;
+$container-border-radius-small: 4px;
+$container-border-radius-medium: 10px;
+$container-border-radius-big: 12px;
+
+
 $transition-duration: 0.4s;
 
 @mixin h1 {
@@ -76,6 +83,11 @@ $transition-duration: 0.4s;
   line-height: $font-text-lineHeight-medium;
 }
 
+@mixin text3 {
+  font-size: $font-text3-fontSize;
+  line-height: $font-text-lineHeight-small;
+}
+
 @mixin button {
   font-weight: $font-fontWeight-medium;
   font-size: $font-button-fontSize;
@@ -84,36 +96,42 @@ $transition-duration: 0.4s;
 
 @mixin btn-black {
   background: $color-background-button-primary-default;
-  color: $color-color-button-primary-default;
+  color: $color-button-primary-default;
 }
 
 @mixin btn-black-hover {
   background: $color-background-button-primary-hover;
-  color: $color-color-button-primary-hover;
+  color: $color-button-primary-hover;
 }
 
 @mixin btn-black-active {
   background: $color-background-button-primary-active;
-  color: $color-color-button-primary-active;
+  color: $color-button-primary-active;
 }
 
 @mixin btn-orange {
   background: $color-background-button-secondary-default;
-  color: $color-color-button-secondary-default;
+  color: $color-button-secondary-default;
 }
 
 @mixin btn-orange-hover {
   background: $color-background-button-secondary-hover;
-  color: $color-color-button-secondary-hover;
+  color: $color-button-secondary-hover;
 }
 
 @mixin btn-orange-disabled {
   background: $color-background-button-secondary-disabled;
-  color: $color-color-button-secondary-disabled;
+  color: $color-button-secondary-disabled;
 }
 
 @mixin input {
   font-family: $font-fontFamily;
   font-size: $font-text2-fontSize;
   line-height: $font-title-lineHeight-medium;
+}
+
+@mixin flex($jc: center) {
+  display: flex;
+  align-items: center;
+  justify-content: $jc;
 }
