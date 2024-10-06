@@ -1,38 +1,36 @@
-@import 'variable.scss';
+@import "variable.scss";
 
 @font-face {
-  font-family: 'Onest';
-  src:  url('./fonts/Onest-Medium.woff2') format('woff2');
+  font-family: "Onest";
+  src: url("./fonts/Onest-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
-
 @font-face {
-  font-family: 'Onest';
-  src: url('./fonts/Onest-Regular.woff2') format('woff2');
+  font-family: "Onest";
+  src: url("./fonts/Onest-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Onest';
-  src: url('./fonts/Onest-Bold.woff2') format('woff2');
+  font-family: "Onest";
+  src: url("./fonts/Onest-Bold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Onest';
-  src: url('./fonts/Onest-Black.woff2') format('woff2');
+  font-family: "Onest";
+  src: url("./fonts/Onest-Black.woff2") format("woff2");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
 }
-
 
 * {
   margin: 0;
@@ -47,12 +45,18 @@ body {
   font-family: $font-fontFamily;
 }
 
-li {
-  list-style: none;
-}
-
 a {
-  transition: 0.4s;
+  color: $color-text-primary;
+  border: 1px solid transparent;
+  text-decoration: none;
+  transition: $transition-duration;
+  &:hover {
+    color: $color-text-hover;
+  }
+  .active {
+    color: $color-text-hover;
+    border: 1px solid $color-link-primary;
+  }
 }
 
 a:active,
@@ -64,17 +68,46 @@ a:focus {
   box-shadow: none;
 }
 
-a:hover {
+li {
+  list-style: none;
+}
 
+.container {
+  width: 100%;
+  max-width: 1220px;
+  margin: 0 auto;
 }
 
 .btn {
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include button;
+  border-radius: $button-border-radius;
+  &-black {
+    @include btn-black;
+    &:hover {
+      @include btn-black-hover;
+    }
+    &-active {
+      @include btn-black-active;
+    }
+  }
+  &-orange {
+    @include btn-orange;
+    &:hover {
+      @include btn-orange-hover;
+    }
+  }
 }
 
-
-.btn:hover {
-
+.title {
+  &-one {
+    @include h1;
+  }
+  &-two {
+    @include h2;
+  }
 }
 
 // Хедер
@@ -97,13 +130,10 @@ a:hover {
 
 // Адаптивность
 @media (max-width: 1339px) {
-
 }
 
 @media (max-width: 767px) {
-
 }
 
 @media (max-width: 320px) {
-
 }

@@ -40,12 +40,18 @@ body {
   font-family: "Onest", sans-serif;
 }
 
-li {
-  list-style: none;
-}
-
 a {
+  color: #1d1d1b;
+  border: 1px solid transparent;
+  text-decoration: none;
   transition: 0.4s;
+}
+a:hover {
+  color: #ff5900;
+}
+a .active {
+  color: #ff5900;
+  border: 1px solid #e0570e;
 }
 
 a:active,
@@ -54,6 +60,58 @@ a:focus {
   outline: 0;
   outline-offset: 0;
   box-shadow: none;
+}
+
+li {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1220px;
+  margin: 0 auto;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  border-radius: 10px;
+}
+.btn-black {
+  background: #f2f6f6;
+  color: #a4adac;
+}
+.btn-black:hover {
+  background: #f2f6f6;
+  color: #1d1d1b;
+}
+.btn-black-active {
+  background: #1d1d1b;
+  color: #fff;
+}
+.btn-orange {
+  background: #ff5900;
+  color: #fff;
+}
+.btn-orange:hover {
+  background: #e0570e;
+  color: #fff;
+}
+
+.title-one {
+  font-weight: 700;
+  font-size: 80px;
+  letter-spacing: -0.04em;
+  line-height: 110%;
+}
+.title-two {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 120%;
 }
 
 .mobileMenu {
