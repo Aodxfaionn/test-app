@@ -9,7 +9,7 @@ function showmobilemenu() {
   });
   function closeMenu(e) {
     if (e.target.closest("a") || e.target.closest(".burger-close"))
-    mobileMenu.classList.remove("active");
+      mobileMenu.classList.remove("active");
     mobileMenu.removeEventListener("click", closeMenu);
   }
 }
@@ -55,3 +55,14 @@ function checkFormField(forma) {
   };
   emailInput.addEventListener("change", validateEmail);
 }
+
+// Якорные ссылки
+const links = document.querySelectorAll('a[href^="#"]');
+links.forEach((link) => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth",
+    });
+  });
+});
