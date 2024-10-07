@@ -68,6 +68,10 @@ a:focus {
   box-shadow: none;
 }
 
+*:focus {
+  outline: none;
+}
+
 li {
   list-style: none;
 }
@@ -168,18 +172,19 @@ li {
 // Дополнительные источники
 .additional {
   margin-top: 80px;
-  padding-bottom: 95px;
+  padding-bottom: 165px;
   .container {
     @include flex(space-between);
     align-items: start;
     gap: 140px;
   }
   .title-two {
-    width: 85%;
+    width: 450px;
   }
 }
 
 .tab {
+  width: 560px;
   &__title {
     position: relative;
     padding: 4px;
@@ -189,13 +194,13 @@ li {
     border-radius: $container-border-radius-medium;
   }
   &__text {
+    width: 560px;
     position: absolute;
     margin-top: 30px;
     opacity: 0;
     visibility: hidden;
     transition: $transition-duration;
     &.active {
-      position: relative;
       opacity: 1;
       visibility: visible;
     }
@@ -203,17 +208,17 @@ li {
   .btn {
     width: 50%;
     height: 52px;
-    position: relative;
-    z-index: 1;
     border-radius: 0;
     background: $color-background-button-primary-default;
     @include text1;
     font-weight: $font-fontWeight-bold;
     color: $color-button-primary-default;
     &-active {
-      border-radius: $container-border-radius-medium;
-      background: $color-background-button-primary-active;
       color: $color-button-primary-active;
+    }
+    span {
+      position: relative;
+      z-index: 1;
     }
   }
   .line {
@@ -335,29 +340,54 @@ button[data-name="service"].btn-active ~ .line {
     border-radius: $container-border-radius-big;
     background: $color-background-default;
     border: 1px solid $color-background-grey-dark;
+    transition: $transition-duration;
     resize: none;
+    &:focus {
+      border: 1px solid $color-background-dark;
+    }
   }
   > div {
     width: 50%;
   }
   .email {
-    width: 100%;
-    padding: 15px 0;
-    background: $color-background-default;
-    border: 0;
-    border-bottom: 1px solid $color-background-grey-dark;
-    @include input;
-    &::-moz-placeholder {
-      @include input;
+    position: relative;
+    &__error {
+      position: absolute;
+      color: $color-text-hover;
+      opacity: 0;
+      visibility: hidden;
+      font-weight: 500;
+      font-size: 10px;
+      letter-spacing: 0.05em;
+      transition: $transition-duration;
+      &.active {
+        opacity: 1;
+        visibility: visible;
+      }
     }
-    &::-webkit-input-placeholder {
+    &__input {
+      width: 100%;
+      padding: 15px 0;
+      background: $color-background-default;
+      border: 0;
+      border-bottom: 1px solid $color-background-grey-dark;
       @include input;
-    }
-    &:-ms-input-placeholder {
-      @include input;
-    }
-    &::placeholder {
-      @include input;
+      transition: $transition-duration;
+      &::-moz-placeholder {
+        @include input;
+      }
+      &::-webkit-input-placeholder {
+        @include input;
+      }
+      &:-ms-input-placeholder {
+        @include input;
+      }
+      &::placeholder {
+        @include input;
+      }
+      &:focus {
+        border-bottom: 1px solid $color-background-dark;
+      }
     }
   }
   .checkbox {
@@ -399,6 +429,13 @@ button[data-name="service"].btn-active ~ .line {
     width: 100%;
     height: 48px;
   }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: $color-text-primary;
+  -webkit-box-shadow: 0 0 0px 40rem $color-background-default inset;
 }
 
 // Адаптивность

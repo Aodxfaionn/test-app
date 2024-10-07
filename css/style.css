@@ -62,6 +62,10 @@ a:focus {
   box-shadow: none;
 }
 
+*:focus {
+  outline: none;
+}
+
 li {
   list-style: none;
 }
@@ -177,7 +181,7 @@ li {
 
 .additional {
   margin-top: 80px;
-  padding-bottom: 95px;
+  padding-bottom: 165px;
 }
 .additional .container {
   display: flex;
@@ -187,9 +191,12 @@ li {
   gap: 140px;
 }
 .additional .title-two {
-  width: 85%;
+  width: 450px;
 }
 
+.tab {
+  width: 560px;
+}
 .tab__title {
   position: relative;
   padding: 4px;
@@ -199,6 +206,7 @@ li {
   border-radius: 10px;
 }
 .tab__text {
+  width: 560px;
   position: absolute;
   margin-top: 30px;
   opacity: 0;
@@ -206,15 +214,12 @@ li {
   transition: 0.4s;
 }
 .tab__text.active {
-  position: relative;
   opacity: 1;
   visibility: visible;
 }
 .tab .btn {
   width: 50%;
   height: 52px;
-  position: relative;
-  z-index: 1;
   border-radius: 0;
   background: #f2f6f6;
   font-size: 22px;
@@ -223,9 +228,11 @@ li {
   color: #a4adac;
 }
 .tab .btn-active {
-  border-radius: 10px;
-  background: #1d1d1b;
   color: #fff;
+}
+.tab .btn span {
+  position: relative;
+  z-index: 1;
 }
 .tab .line {
   width: 49%;
@@ -357,12 +364,33 @@ button[data-name=service].btn-active ~ .line {
   border-radius: 12px;
   background: #e8edee;
   border: 1px solid #a4adac;
+  transition: 0.4s;
   resize: none;
+}
+.form textarea:focus {
+  border: 1px solid #1d1d1b;
 }
 .form > div {
   width: 50%;
 }
 .form .email {
+  position: relative;
+}
+.form .email__error {
+  position: absolute;
+  color: #ff5900;
+  opacity: 0;
+  visibility: hidden;
+  font-weight: 500;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  transition: 0.4s;
+}
+.form .email__error.active {
+  opacity: 1;
+  visibility: visible;
+}
+.form .email__input {
   width: 100%;
   padding: 15px 0;
   background: #e8edee;
@@ -371,16 +399,20 @@ button[data-name=service].btn-active ~ .line {
   font-family: "Onest", sans-serif;
   font-size: 18px;
   line-height: 120%;
+  transition: 0.4s;
 }
-.form .email::-moz-placeholder {
+.form .email__input::-moz-placeholder {
   font-family: "Onest", sans-serif;
   font-size: 18px;
   line-height: 120%;
 }
-.form .email::placeholder {
+.form .email__input::placeholder {
   font-family: "Onest", sans-serif;
   font-size: 18px;
   line-height: 120%;
+}
+.form .email__input:focus {
+  border-bottom: 1px solid #1d1d1b;
 }
 .form .checkbox {
   margin: 32px 0 48px;
@@ -420,4 +452,11 @@ button[data-name=service].btn-active ~ .line {
 .form .btn {
   width: 100%;
   height: 48px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #1d1d1b;
+  -webkit-box-shadow: 0 0 0px 40rem #e8edee inset;
 }/*# sourceMappingURL=style.css.map */

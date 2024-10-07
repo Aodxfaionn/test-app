@@ -24,6 +24,7 @@
           </li>
         </ul>
       </nav>
+      
     </div>
   </header>
   <main>
@@ -43,10 +44,10 @@
         <div class="tab">
           <div class="tab__title">
             <button class="btn btn-active" data-name="operator">
-              Операторам
+              <span>Операторам</span>
             </button>
             <button class="btn" data-name="service">
-              ОТТ сервисам
+              <span>ОТТ сервисам</span>
             </button>
             <p class="line"></p>
           </div>
@@ -162,7 +163,10 @@
         <form class="form">
           <textarea name="text" id="text">Напишите свой вопрос</textarea>
           <div>
-            <input type="email" name="email" id="email" class="email" placeholder="Введите e-mail">
+            <div class="email">
+              <input type="email" name="email" id="email" class="email__input" placeholder="Введите e-mail">
+              <p class="email__error">Неправильно указана почта</p>
+            </div>
             <div class="checkbox">
               <div><input type="checkbox" name="agree" id="agree">
                 <label for="agree"></label>
