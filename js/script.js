@@ -1,13 +1,18 @@
 // Бургерное меню
-// showmobilemenu();
-// function showmobilemenu() {
-//   const menu = document.querySelector(".mobileMenu"),
-//     nav = document.querySelector(".nav");
-//   menu.addEventListener("click", function () {
-//     menu.classList.toggle("active");
-//     nav.classList.toggle("active");
-//   });
-// }
+showmobilemenu();
+function showmobilemenu() {
+  const burgerOpen = document.querySelector(".burger-open"),
+    mobileMenu = document.querySelector(".mobileMenu");
+  burgerOpen.addEventListener("click", function () {
+    mobileMenu.classList.toggle("active");
+    mobileMenu.addEventListener("click", closeMenu);
+  });
+  function closeMenu(e) {
+    if (e.target.closest("a") || e.target.closest(".burger-close"))
+    mobileMenu.classList.remove("active");
+    mobileMenu.removeEventListener("click", closeMenu);
+  }
+}
 
 // Табы
 showTabs();

@@ -122,6 +122,7 @@ li {
 
 // Хедер
 .header {
+  position: relative;
   .container {
     margin-top: 48px;
     @include flex(space-between);
@@ -141,14 +142,20 @@ li {
     @include flex;
     gap: 62px;
     flex-wrap: wrap;
-    font-size: $font-text3-fontSize;
-    line-height: 171%;
-    letter-spacing: $font-letterSpacing-plus;
-    font-weight: $font-fontWeight-medium;
+    li {
+      font-size: $font-text3-fontSize;
+      line-height: 171%;
+      letter-spacing: $font-letterSpacing-plus;
+      font-weight: $font-fontWeight-medium;
+    }
+  }
+  svg {
+    cursor: pointer;
   }
 }
 
-.mobileMenu {
+.mobileMenu,
+.burger-open {
   display: none;
 }
 
@@ -440,6 +447,47 @@ input:-webkit-autofill:focus {
 
 // Адаптивность
 @media (max-width: 1339px) {
+  .desktopNav {
+    display: none;
+  }
+  .mobileMenu,
+  .burger-open {
+    display: block;
+  }
+  .mobileMenu {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 10;
+    width: 283px;
+    height: 100%;
+    padding: 31px 40px 40px 31px;
+    @include flex;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100%);
+    background: $color-background-white;
+    transition: $transition-duration;
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+    }
+    .burger {
+      width: 44px;
+      height: 44px;
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      @include flex;
+      border: 2px solid $color-background-orange;
+      border-radius: $container-border-radius-medium;
+    }
+    .header__nav {
+      gap: 25px;
+      justify-content: start;
+    }
+  }
 }
 
 @media (max-width: 767px) {
