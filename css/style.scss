@@ -515,16 +515,19 @@ input:-webkit-autofill:focus {
       gap: 25px;
       justify-content: start;
     }
+    .logo {
+      display: none;
+    }
   }
   .title {
     &-one {
-      font-size: $font-h1-fontSize-mobile;
+      font-size: $font-h1-fontSize-tablet;
     }
     &-two {
-      font-size: $font-h2-fontSize-mobile;
+      font-size: $font-h2-fontSize-tablet;
     }
     &-three {
-      font-size: $font-h3-fontSize-mobile;
+      font-size: $font-h3-fontSize-tablet;
     }
   }
   .info {
@@ -561,7 +564,7 @@ input:-webkit-autofill:focus {
     .btn {
       width: 165px;
       height: 32px;
-      border-radius: $container-border-radius-medium-mobile;
+      border-radius: $container-border-radius-tablet;
       font-size: $font-text3-fontSize + 2px;
     }
   }
@@ -614,7 +617,7 @@ input:-webkit-autofill:focus {
     }
     .title-two {
       max-width: 145px;
-      font-size: $font-h3-fontSize-mobile;
+      font-size: $font-h3-fontSize-tablet;
     }
     &__list {
       gap: 10px;
@@ -630,6 +633,7 @@ input:-webkit-autofill:focus {
 
   .howWork {
     padding: 50px 0 75px;
+    overflow-x: hidden;
     &__img {
       max-width: 400px;
     }
@@ -705,7 +709,199 @@ input:-webkit-autofill:focus {
 }
 
 @media (max-width: 767px) {
-}
+  body {
+    font-size: $font-text3-fontSize + 2px;
+  }
 
-@media (max-width: 320px) {
+  .container {
+    max-width: 100%;
+    padding: 0px 17px;
+  }
+
+  .mobileMenu {
+    width: 100%;
+    justify-content: start;
+    .burger-close {
+      width: 31px;
+      height: 31px;
+      border-radius: $container-border-radius-tablet;
+    }
+    .header__nav {
+      flex-direction: column;
+      align-items: start;
+    }
+    .logo {
+      display: block;
+      position: absolute;
+      top: 20px;
+      left: 50px;
+    }
+  }
+
+  .header {
+    .container {
+      margin-top: 17px;
+    }
+    &__logo {
+      width: 113px;
+      height: 28px;
+      border-radius: $container-border-radius-tablet;
+      font-size: $font-text3-fontSize + 1px;
+    }
+    .burger-open {
+      width: 31px;
+      height: 31px;
+    }
+  }
+
+  .title {
+    &-one {
+      font-size: $font-h1-fontSize-mobile;
+    }
+    &-two {
+      font-size: $font-h2-fontSize-mobile;
+    }
+    &-three {
+      font-size: $font-h3-fontSize-mobile;
+    }
+  }
+
+  .info {
+    padding: 113px 0 58px;
+    &__desc {
+      width: 100%;
+      margin-top: 34px;
+      font-size: 16px;
+    }
+    .info__btn {
+      margin-top: 115px;
+    }
+  }
+
+  .additional {
+    .container {
+      flex-direction: column;
+      gap: 25px;
+    }
+    .title-two {
+      width: 100%;
+    }
+  }
+
+  .tab {
+    width: 100%;
+    .btn {
+      height: 25px;
+      border-radius: $container-border-radius-small + 1px;
+      font-size: $font-text3-fontSize - 2px;
+    }
+    &__text {
+      width: 90%;
+      margin-top: 22px;
+    }
+  }
+
+  .balans {
+    padding: 150px 0 40px;
+    .title-two {
+      width: 100%;
+      text-align: left;
+    }
+    .title-three {
+      width: 100%;
+      margin: 12px 0 14px;
+    }
+    &__flex {
+      width: 84%;
+      margin: 60px auto 0;
+      flex-direction: column;
+      gap: 30px;
+      p {
+        width: 100%;
+        font-size: 14px;
+        line-height: $font-text-lineHeight-small - 2px;
+      }
+    }
+    &__img {
+      flex-direction: column;
+      gap: 36px;
+      > svg {
+        width: 59px;
+        transform: rotate(90deg);
+        transform-origin: center;
+      }
+    }
+  }
+
+  .partners {
+    .container {
+      margin: 35px auto 70px;
+      flex-direction: column;
+      align-items: start;
+      gap: 20px;
+    }
+    .title-two {
+      max-width: 200px;
+      font-size: 20px;
+    }
+    &__list {
+      gap: 5px;
+      justify-content: space-evenly;
+      li {
+        max-width: 48%;
+      }
+      img {
+        width: 100%;
+        max-height: 58px;
+      }
+    }
+    &-two {
+      order: 3;
+    }
+    &-three {
+      order: 2;
+    }
+  }
+
+  .howWork {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 35px 0 50px;
+    &__img {
+      position: relative;
+      max-width: 440px;
+      width: 440px;
+      top: 0;
+    }
+    .title-two {
+      width: 215px;
+    }
+    &__list {
+      width: 100%;
+      margin: 37px 0 27px;
+      &__item {
+        margin-bottom: 15px;
+      }
+      p {
+        width: 85%;
+        font-size: 14px;
+      }
+    }
+    .btn {
+      width: 100%;
+    }
+  }
+
+  .forma {
+    padding: 80px 0 50px;
+  }
+
+  .form {
+    margin-top: 38px;
+    gap: 27px;
+    .checkbox {
+      margin: 32px 0 32px;
+    }
+  }
 }
