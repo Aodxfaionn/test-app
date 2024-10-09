@@ -43,6 +43,7 @@ body {
   background-color: $color-background-default;
   @include text1;
   font-family: $font-fontFamily;
+  overflow-x: hidden;
 }
 
 a {
@@ -120,6 +121,21 @@ li {
   }
 }
 
+.overflow {
+  overflow: hidden;
+}
+
+.img-bg {
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  opacity: 0.8;
+  img {
+    width: 100%;
+  }
+}
+
 // Хедер
 .header {
   position: relative;
@@ -162,8 +178,6 @@ li {
 // Инфо
 .info {
   padding: 115px 0 100px;
-  background: url(./img/info-bg.png) no-repeat;
-  background-position: 0px -20px;
   &__desc {
     width: 55%;
     margin-top: 42px;
@@ -201,12 +215,12 @@ li {
     border-radius: $container-border-radius-medium;
   }
   &__text {
-    width: 560px;
     position: absolute;
+    width: 560px;
     margin-top: 30px;
     opacity: 0;
     visibility: hidden;
-    transition: $transition-duration;
+    transition: $transition-duration opacity;
     &.active {
       opacity: 1;
       visibility: visible;
@@ -229,7 +243,7 @@ li {
     }
   }
   .line {
-    width: 49%;
+    width: 50%;
     height: calc(100% - 8px);
     position: absolute;
     left: 4px;
@@ -256,6 +270,10 @@ button[data-name="service"].btn-active ~ .line {
     margin: 0 auto;
     text-align: center;
   }
+  .title-three {
+    width: 180px;
+    margin: 15px 0;
+  }
   &__flex {
     margin-top: 110px;
     @include flex;
@@ -267,7 +285,24 @@ button[data-name="service"].btn-active ~ .line {
     }
   }
   &__img {
+    position: relative;
     @include flex;
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 227px;
+      height: 12px;
+      background-image: url("data:image/svg+xml;charset=UTF-8, %3csvg width='227' height='12' viewBox='0 0 227 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.218805 6C0.218805 9.19287 2.80713 11.7812 6 11.7812C9.19287 11.7812 11.7812 9.19287 11.7812 6C11.7812 2.80713 9.19287 0.218805 6 0.218805C2.80713 0.218805 0.218805 2.80713 0.218805 6ZM6 7.08397H227V4.91603H6V7.08397Z' fill='%23FF5900' /%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+    }
+    &::after {
+      content: "";
+      display: inline-block;
+      width: 231px;
+      height: 12px;
+      background-image: url("data:image/svg+xml;charset=UTF-8, %3csvg width='230' height='12' viewBox='0 0 230 12' fill='none' xmlns='http://www.w3.org/2000/svg' %3e%3cpath d='M218.219 6.00002C218.219 9.19289 220.807 11.7812 224 11.7812C227.193 11.7812 229.781 9.19289 229.781 6.00002C229.781 2.80715 227.193 0.218825 224 0.218824C220.807 0.218824 218.219 2.80715 218.219 6.00002ZM-9.4764e-08 7.08397L224 7.08399L224 4.91605L9.4764e-08 4.91603L-9.4764e-08 7.08397Z' fill='%23FF5900' /%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+    }
     &-bg {
       width: 120px;
       height: 120px;
@@ -275,10 +310,10 @@ button[data-name="service"].btn-active ~ .line {
       border-radius: $container-border-radius-big;
       background: $color-background-orange;
     }
-  }
-  .title-three {
-    width: 180px;
-    margin: 13px 0 16px;
+    .title-three {
+      width: 180px;
+      margin: 13px 0 16px;
+    }
   }
 }
 
@@ -286,12 +321,12 @@ button[data-name="service"].btn-active ~ .line {
 .partners {
   .container {
     margin: 115px auto;
-    @include flex(space-between);
-    gap: 20px;
+    @include flex(start);
+    gap: 100px;
   }
   &__list {
-    @include flex(space-between);
-    gap: 100px;
+    @include flex(start);
+    gap: 80px;
     flex-wrap: wrap;
   }
   .title-two {
@@ -411,7 +446,7 @@ button[data-name="service"].btn-active ~ .line {
     }
   }
   .checkbox {
-    margin: 32px 0 48px;
+    margin: 32px 0 45px;
     display: flex;
     gap: 10px;
     @include text3;
@@ -463,25 +498,34 @@ input:-webkit-autofill:focus {
   body {
     @include text3;
   }
+
   .container {
     max-width: 95%;
     padding: 0 25px;
   }
+
+  .img-bg {
+    top: -90px;
+    img {
+      width: auto;
+    }
+  }
+
   .header {
-    width: 100%;
-    position: absolute;
-    top: 0;
     .container {
       margin-top: 30px;
     }
   }
+
   .desktopNav {
     display: none;
   }
+
   .mobileMenu,
   .burger-open {
     display: block;
   }
+
   .mobileMenu {
     position: fixed;
     right: 0;
@@ -519,6 +563,7 @@ input:-webkit-autofill:focus {
       display: none;
     }
   }
+
   .title {
     &-one {
       font-size: $font-h1-fontSize-tablet;
@@ -530,8 +575,9 @@ input:-webkit-autofill:focus {
       font-size: $font-h3-fontSize-tablet;
     }
   }
+
   .info {
-    padding: 172px 0 100px;
+    padding: 95px 0 105px;
     background-position: 0px -90px;
     &__desc {
       margin-top: 30px;
@@ -562,10 +608,13 @@ input:-webkit-autofill:focus {
       margin-top: 12px;
     }
     .btn {
-      width: 165px;
+      min-width: 165px;
       height: 32px;
       border-radius: $container-border-radius-tablet;
       font-size: $font-text3-fontSize + 2px;
+    }
+    .line {
+      min-width: 165px;
     }
   }
 
@@ -580,11 +629,11 @@ input:-webkit-autofill:focus {
     }
     &__flex {
       margin-top: 85px;
-      gap: 15px;
+      gap: 20px;
       font-size: $font-text3-fontSize - 2px;
       line-height: $font-title-lineHeight-big;
       p {
-        width: 175px;
+        width: 160px;
       }
     }
     &__left svg {
@@ -592,7 +641,11 @@ input:-webkit-autofill:focus {
       height: 24px;
     }
     &__img {
-      > svg {
+      &:after {
+        width: 96px;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='96' height='12' viewBox='0 0 96 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M95.3333 6C95.3333 3.05448 92.9455 0.666667 90 0.666667C87.0545 0.666666 84.6667 3.05448 84.6667 6C84.6667 8.94552 87.0545 11.3333 90 11.3333C92.9455 11.3333 95.3333 8.94552 95.3333 6ZM90 5L8.74228e-08 4.99999L-8.74228e-08 6.99999L90 7L90 5Z' fill='%23FF5900' /%3e%3c/svg%3e");
+      }
+      &:before {
         width: 96px;
       }
       &-bg {
@@ -620,7 +673,7 @@ input:-webkit-autofill:focus {
       font-size: $font-h3-fontSize-tablet;
     }
     &__list {
-      gap: 10px;
+      gap: 30px;
       li {
         max-width: 30%;
       }
@@ -633,7 +686,6 @@ input:-webkit-autofill:focus {
 
   .howWork {
     padding: 50px 0 75px;
-    overflow-x: hidden;
     &__img {
       max-width: 400px;
     }
@@ -713,6 +765,14 @@ input:-webkit-autofill:focus {
     font-size: $font-text3-fontSize + 2px;
   }
 
+  .img-bg {
+    top: 65px;
+    img {
+      width: 740px;
+      height: 410px;
+    }
+  }
+
   .container {
     max-width: 100%;
     padding: 0px 17px;
@@ -760,6 +820,7 @@ input:-webkit-autofill:focus {
     }
     &-two {
       font-size: $font-h2-fontSize-mobile;
+      line-height: $font-title-lineHeight-big;
     }
     &-three {
       font-size: $font-h3-fontSize-mobile;
@@ -767,21 +828,22 @@ input:-webkit-autofill:focus {
   }
 
   .info {
-    padding: 113px 0 58px;
+    padding: 65px 0 60px;
     &__desc {
-      width: 100%;
+      width: 101%;
       margin-top: 34px;
       font-size: 16px;
     }
     .info__btn {
-      margin-top: 115px;
+      margin-top: 110px;
     }
   }
 
   .additional {
+    padding-bottom: 140px;
     .container {
       flex-direction: column;
-      gap: 25px;
+      gap: 20px;
     }
     .title-two {
       width: 100%;
@@ -791,6 +853,7 @@ input:-webkit-autofill:focus {
   .tab {
     width: 100%;
     .btn {
+      min-width: 140px;
       height: 25px;
       border-radius: $container-border-radius-small + 1px;
       font-size: $font-text3-fontSize - 2px;
@@ -799,10 +862,14 @@ input:-webkit-autofill:focus {
       width: 90%;
       margin-top: 22px;
     }
+    .line {
+      min-width: 140px;
+      border-radius: $container-border-radius-small + 1px;
+    }
   }
 
   .balans {
-    padding: 150px 0 40px;
+    padding: 43px 0 40px;
     .title-two {
       width: 100%;
       text-align: left;
@@ -813,9 +880,9 @@ input:-webkit-autofill:focus {
     }
     &__flex {
       width: 84%;
-      margin: 60px auto 0;
+      margin: 55px auto 0;
       flex-direction: column;
-      gap: 30px;
+      gap: 20px;
       p {
         width: 100%;
         font-size: 14px;
@@ -824,28 +891,32 @@ input:-webkit-autofill:focus {
     }
     &__img {
       flex-direction: column;
-      gap: 36px;
-      > svg {
-        width: 59px;
-        transform: rotate(90deg);
-        transform-origin: center;
+      &:after {
+        height: 59px;
+        width: 12px;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='12' height='59' viewBox='0 0 12 59' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M6 47.6667C3.05448 47.6667 0.666669 50.0545 0.666669 53C0.666669 55.9455 3.05448 58.3333 6 58.3333C8.94552 58.3333 11.3333 55.9455 11.3333 53C11.3333 50.0545 8.94552 47.6667 6 47.6667ZM5 4.37114e-08L5 53L7 53L7 -4.37114e-08L5 4.37114e-08Z' fill='%23FF5900' /%3e%3c/svg%3e");
+      }
+      &:before {
+        height: 59px;
+        width: 12px;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='12' height='59' viewBox='0 0 12 59' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M6 0.666667C3.05448 0.666667 0.666666 3.05448 0.666667 6C0.666667 8.94552 3.05448 11.3333 6 11.3333C8.94552 11.3333 11.3333 8.94552 11.3333 6C11.3333 3.05448 8.94552 0.666666 6 0.666667ZM5 6L5 59L7 59L7 6L5 6Z' fill='%23FF5900' /%3e%3c/svg%3e");
       }
     }
   }
 
   .partners {
     .container {
-      margin: 35px auto 70px;
+      margin: 60px auto 70px;
       flex-direction: column;
       align-items: start;
       gap: 20px;
     }
     .title-two {
-      max-width: 200px;
+      max-width: 180px;
       font-size: 20px;
     }
     &__list {
-      gap: 5px;
+      gap: 10px;
       justify-content: space-evenly;
       li {
         max-width: 48%;
@@ -864,24 +935,23 @@ input:-webkit-autofill:focus {
   }
 
   .howWork {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    padding: 35px 0 50px;
+    padding: 35px 0 435px;
     &__img {
-      position: relative;
       max-width: 440px;
       width: 440px;
-      top: 0;
+      top: unset;
+      bottom: 50px;
+      right: -148px;
     }
     .title-two {
-      width: 215px;
+      width: 225px;
     }
     &__list {
       width: 100%;
-      margin: 37px 0 27px;
+      margin: 30px 0 27px;
       &__item {
         margin-bottom: 15px;
+        gap: 16px;
       }
       p {
         width: 85%;

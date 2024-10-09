@@ -8,11 +8,9 @@ $font-h3-fontSize-tablet: 16px;
 $font-h1-fontSize-mobile: 36px;
 $font-h2-fontSize-mobile: 24px;
 $font-h3-fontSize-mobile: 20px;
-$font-button-fontSize: 14px;
 $font-text1-fontSize: 22px;
 $font-text2-fontSize: 18px;
 $font-text3-fontSize: 14px;
-$font-fontWeight-regular: 400;
 $font-fontWeight-medium: 500;
 $font-fontWeight-bold: 700;
 $font-fontWeight-black: 900;
@@ -24,7 +22,6 @@ $font-title-lineHeight-big: 130%;
 $font-text-lineHeight-big: 32px;
 $font-text-lineHeight-medium: 22px;
 $font-text-lineHeight-small: 20px;
-$font-text-default: 100%;
 
 $color-text-primary: #1d1d1b;
 $color-text-secondary: #fff;
@@ -41,14 +38,12 @@ $color-background-button-primary-default: #f2f6f6;
 $color-background-button-primary-hover: #a4adac;
 $color-background-button-primary-active: #1d1d1b;
 $color-button-primary-default: #a4adac;
-$color-button-primary-hover: #fff;
 $color-button-primary-active: #fff;
 
 $color-background-button-secondary-default: #ff5900;
 $color-background-button-secondary-hover: #e0570e;
 $color-background-button-secondary-disabled: #d6dbdb;
 $color-button-secondary-default: #fff;
-$color-button-secondary-hover: #fff;
 $color-button-secondary-disabled: #a4adac;
 
 $color-link-primary: #e0570e;
@@ -96,7 +91,7 @@ $transition-duration: 0.4s;
 
 @mixin button {
   font-weight: $font-fontWeight-medium;
-  font-size: $font-button-fontSize;
+  font-size: $font-text3-fontSize;
   letter-spacing: $font-letterSpacing-plus;
 }
 
@@ -107,7 +102,7 @@ $transition-duration: 0.4s;
 
 @mixin btn-black-hover {
   background: $color-background-button-primary-hover;
-  color: $color-button-primary-hover;
+  color: $color-button-primary-active;
 }
 
 @mixin btn-black-active {
@@ -122,7 +117,7 @@ $transition-duration: 0.4s;
 
 @mixin btn-orange-hover {
   background: $color-background-button-secondary-hover;
-  color: $color-button-secondary-hover;
+  color: $color-button-secondary-default;
 }
 
 @mixin btn-orange-disabled {

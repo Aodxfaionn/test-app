@@ -2,7 +2,8 @@
 showmobilemenu();
 function showmobilemenu() {
   const burgerOpen = document.querySelector(".burger-open"),
-    mobileMenu = document.querySelector(".mobileMenu");
+    mobileMenu = document.querySelector(".mobileMenu"),
+    body = document.querySelector("body");
   burgerOpen.addEventListener("click", function () {
     mobileMenu.classList.toggle("active");
     mobileMenu.addEventListener("click", closeMenu);
