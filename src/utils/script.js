@@ -84,7 +84,7 @@ window.addEventListener(
           : link.classList.remove("active");
       }
     });
-  }, 500)
+  }, 300)
 );
 
 // Для улучшения производительности
