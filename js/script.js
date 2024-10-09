@@ -2,8 +2,7 @@
 showmobilemenu();
 function showmobilemenu() {
   const burgerOpen = document.querySelector(".burger-open"),
-    mobileMenu = document.querySelector(".mobileMenu"),
-    body = document.querySelector("body");
+    mobileMenu = document.querySelector(".mobileMenu");
   burgerOpen.addEventListener("click", function () {
     mobileMenu.classList.toggle("active");
     mobileMenu.addEventListener("click", closeMenu);
@@ -67,3 +66,36 @@ links.forEach((link) => {
     });
   });
 });
+
+// Выделение активной секции
+window.addEventListener(
+  "scroll",
+  debounce(function () {
+    const sections = document.querySelectorAll("section");
+    sections.forEach((item) => {
+      let link;
+      if (window.innerWidth < 1440)
+        link = document.querySelector(`.mobileMenu a[href="#${item.id}"]`);
+      else link = document.querySelector(`.desktopNav a[href="#${item.id}"]`);
+      if (link != null) {
+        window.scrollY >= item.offsetTop &&
+        window.scrollY < item.offsetTop + item.offsetHeight
+          ? link.classList.add("active")
+          : link.classList.remove("active");
+      }
+    });
+  }, 500)
+);
+
+// Для улучшения производительности
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction() {
+    let later = function () {
+      clearTimeout(timeout);
+      func();
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}

@@ -138,7 +138,6 @@ li {
 
 // Хедер
 .header {
-  position: relative;
   .container {
     margin-top: 48px;
     @include flex(space-between);
@@ -163,6 +162,10 @@ li {
       line-height: 171%;
       letter-spacing: $font-letterSpacing-plus;
       font-weight: $font-fontWeight-medium;
+      transition: $transition-duration;
+      & .active {
+        color: $color-link-primary;
+      }
     }
   }
   svg {
@@ -539,7 +542,7 @@ input:-webkit-autofill:focus {
     visibility: hidden;
     transform: translateX(100%);
     background: $color-background-white;
-    transition: $transition-duration;
+    transition: 0.1s;
     &.active {
       opacity: 1;
       visibility: visible;
@@ -558,6 +561,9 @@ input:-webkit-autofill:focus {
     .header__nav {
       gap: 25px;
       justify-content: start;
+      & .active {
+        color: $color-link-primary;
+      }
     }
     .logo {
       display: none;

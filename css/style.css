@@ -144,9 +144,6 @@ li {
   width: 100%;
 }
 
-.header {
-  position: relative;
-}
 .header .container {
   margin-top: 48px;
   display: flex;
@@ -178,6 +175,10 @@ li {
   line-height: 171%;
   letter-spacing: 0.04em;
   font-weight: 500;
+  transition: 0.4s;
+}
+.header__nav li .active {
+  color: #e0570e;
 }
 .header svg {
   cursor: pointer;
@@ -556,7 +557,7 @@ input:-webkit-autofill:focus {
     visibility: hidden;
     transform: translateX(100%);
     background: #fff;
-    transition: 0.4s;
+    transition: 0.1s;
   }
   .mobileMenu.active {
     opacity: 1;
@@ -578,6 +579,9 @@ input:-webkit-autofill:focus {
   .mobileMenu .header__nav {
     gap: 25px;
     justify-content: start;
+  }
+  .mobileMenu .header__nav .active {
+    color: #e0570e;
   }
   .mobileMenu .logo {
     display: none;
