@@ -623,6 +623,9 @@ input:-webkit-autofill:focus {
     .line {
       min-width: 165px;
     }
+    button[data-name="service"].btn-active ~ .line {
+      transform: translateX(96%);
+    }
   }
 
   .balans {

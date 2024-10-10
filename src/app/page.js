@@ -93,8 +93,9 @@ export default function Home() {
           else
             link = document.querySelector(`.desktopNav a[href="#${item.id}"]`);
           if (link != null) {
-            window.scrollY >= item.offsetTop &&
-            window.scrollY < item.offsetTop + item.offsetHeight
+            let rect = item.getBoundingClientRect();
+            rect.top <= window.innerHeight / 2 &&
+            rect.bottom >= window.innerHeight / 2
               ? link.classList.add("active")
               : link.classList.remove("active");
           }
@@ -401,7 +402,7 @@ export default function Home() {
                     <label htmlFor="agree"></label>
                   </div>
                   <p>
-                    Я ознакомлен(а) с
+                    Я ознакомлен(а) с&nbsp;
                     <a href="/">политикой конфиденциальности</a> и согласен(на)
                     на обработку <a href="/">персональных данных</a>.
                   </p>
