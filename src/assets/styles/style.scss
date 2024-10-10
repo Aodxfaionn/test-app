@@ -509,6 +509,7 @@ input:-webkit-autofill:focus {
 
   .img-bg {
     top: -90px;
+    overflow-x: hidden;
     img {
       width: auto;
     }
@@ -692,6 +693,7 @@ input:-webkit-autofill:focus {
 
   .howWork {
     padding: 50px 0 75px;
+    overflow-x: hidden;
     &__img {
       max-width: 400px;
       height: auto;
